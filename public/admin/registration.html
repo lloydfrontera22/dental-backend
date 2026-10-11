@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration — DentaCare Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head><body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">DentaCare</div><div class="clinic-name">&nbsp;</div>
+    <nav id="sidebar-nav"></nav>
+    <button class="btn btn-ghost logout" id="logout-btn">Log out</button>
+  </aside>
+  <main class="main">
+    <div class="page-head"><div><h1>Registration</h1><p>Personal info, client count and a bookings overview.</p></div></div>
+    <div class="cards">
+      <div class="card"><div class="k">Total patients</div><div class="v" id="c-patients">—</div></div>
+      <div class="card"><div class="k">Doctors</div><div class="v" id="c-doctors">—</div></div>
+      <div class="card"><div class="k">Today's appointments</div><div class="v" id="c-today">—</div></div>
+    </div>
+    <div class="panel">
+      <h2>Owner / clinic info</h2>
+      <p class="muted">Signed in as <span data-user-name>—</span>. Full profile editing can be added to <code>PUT /api/onboarding/clinic</code> when needed.</p>
+    </div>
+  </main>
+</div>
+<script src="admin.js"></script>
+<script src="registration.js"></script>
+
+</body></html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slots — DentaCare Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head><body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">DentaCare</div>
+    <div class="clinic-name" id="clinic-name">&nbsp;</div>
+    <nav id="sidebar-nav"></nav>
+    <button class="btn btn-ghost logout" id="logout-btn">Log out</button>
+  </aside>
+  <main class="main">
+    <div class="page-head">
+      <div><h1>Slots</h1><p>Today's grid, the recurring pattern, and one-off changes.</p></div>
+      <input type="date" id="grid-date">
+    </div>
+
+    <div class="panel">
+      <h2>Today's booking slots</h2>
+      <div class="slot-grid" id="slot-grid"><span class="muted">Loading…</span></div>
+      <p class="muted" id="grid-note" style="margin-top:12px"></p>
+    </div>
+
+    <div class="panel">
+      <h2>Recurring pattern <span class="muted" style="font-weight:400">— the flexible part</span></h2>
+      <p class="muted">e.g. Mon–Fri 10:00–13:00, 30 min slots. Change this any time; it applies from today onward.</p>
+      <div id="rule-list"></div>
+      <button class="btn btn-ghost btn-sm" id="add-rule-btn" style="margin-top:6px">+ Add a rule</button>
+      <div style="margin-top:16px"><button class="btn btn-primary" id="save-rules-btn">Save pattern</button></div>
+      <p class="status" id="rules-status"></p>
+    </div>
+
+    <div class="panel">
+      <h2>One-off override</h2>
+      <p class="muted">Block a holiday or doctor's day off, or add an extra window for a rush day.</p>
+      <div class="row3">
+        <div class="field"><label>Date</label><input type="date" id="ov-date"></div>
+        <div class="field"><label>Type</label>
+          <select id="ov-type"><option value="block">Block time</option><option value="add">Add extra time</option></select>
+        </div>
+        <div class="field"><label>Reason (optional)</label><input id="ov-reason" placeholder="e.g. Doctor on leave"></div>
+      </div>
+      <div class="row3">
+        <div class="field"><label>Start time (leave blank to block the whole day)</label><input type="time" id="ov-start"></div>
+        <div class="field"><label>End time</label><input type="time" id="ov-end"></div>
+        <div class="field"><label>Slot length (mins, for "add")</label><input type="number" id="ov-duration" value="30" min="5" max="240"></div>
+      </div>
+      <button class="btn btn-primary" id="add-override-btn">Add override</button>
+      <p class="status" id="override-status"></p>
+      <table style="margin-top:14px"><thead><tr><th>Date</th><th>Type</th><th>Time</th><th>Reason</th><th></th></tr></thead>
+      <tbody id="override-rows"><tr><td colspan="5" class="muted">No overrides yet.</td></tr></tbody></table>
+    </div>
+  </main>
+</div>
+<script src="admin.js"></script>
+<script src="slots.js"></script>
+</body></html>

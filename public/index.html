@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FBFAF8">
+  <title>DentaCare Hospital — Secure Sign In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-orb orb-one" aria-hidden="true"></div>
+  <div class="background-orb orb-two" aria-hidden="true"></div>
+  <div class="background-grid" aria-hidden="true"></div>
+
+  <main class="login-page">
+    <header class="page-header">
+      <a href="#" class="brand" aria-label="DentaCare Hospital home">
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M16 4.2c-4.25 0-7.45 2.98-7.45 7.16 0 2.44.63 3.73.63 6.15 0 4.1-1.54 6.1-1.54 9.15 0 2.55 1.45 4.13 3.25 4.13 2.1 0 2.63-2.75 3.1-5.7.42-2.5.82-4.45 2.01-4.45 1.19 0 1.59 1.95 2.01 4.45.47 2.95 1 5.7 3.1 5.7 1.8 0 3.25-1.58 3.25-4.13 0-3.05-1.54-5.05-1.54-9.15 0-2.42.63-3.71.63-6.15C23.45 7.18 20.25 4.2 16 4.2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M16 8.3v6.2M12.9 11.4h6.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>DentaCare</strong>
+          <small>Dental Hospital</small>
+        </span>
+      </a>
+
+      <div class="header-note">
+        <span class="status-dot"></span>
+        Secure staff portal
+      </div>
+    </header>
+
+    <section class="login-card" aria-labelledby="login-title">
+      <div class="card-topline" aria-hidden="true"></div>
+
+      <!-- Compact carousel INSIDE the login card -->
+      <section class="login-carousel" id="hero-carousel" aria-label="Dental hospital highlights">
+        <div class="carousel-track" id="carousel-track">
+          <article class="hero-slide is-active">
+            <img
+              src="../images/1.jpg"
+              alt="Dental professional caring for a patient in a modern clinic"
+              fetchpriority="high"
+            >
+            <div class="image-wash" aria-hidden="true"></div>
+            <div class="slide-copy">
+              <span class="slide-kicker"><span></span> Patient-first care</span>
+              <h1>Modern care.<br><em>Human comfort.</em></h1>
+            </div>
+            <span class="slide-number">01 / 04</span>
+          </article>
+
+          <article class="hero-slide">
+            <img
+              src="../images/2.jpg"
+              alt="Bright modern dental treatment room"
+              loading="lazy"
+            >
+            <div class="image-wash" aria-hidden="true"></div>
+            <div class="slide-copy">
+              <span class="slide-kicker"><span></span> Advanced dentistry</span>
+              <h1>Designed for<br><em>precision.</em></h1>
+            </div>
+            <span class="slide-number">02 / 04</span>
+          </article>
+
+          <article class="hero-slide">
+            <img
+              src="../images/3.jpg"
+              alt="Professional dental chair and treatment equipment"
+              loading="lazy"
+            >
+            <div class="image-wash" aria-hidden="true"></div>
+            <div class="slide-copy">
+              <span class="slide-kicker"><span></span> Clinical excellence</span>
+              <h1>Every detail<br><em>matters.</em></h1>
+            </div>
+            <span class="slide-number">03 / 04</span>
+          </article>
+
+          <article class="hero-slide">
+            <img
+              src="../images/4.jpg"
+              alt="Dental professionals working together during patient treatment"
+              loading="lazy"
+            >
+            <div class="image-wash" aria-hidden="true"></div>
+            <div class="slide-copy">
+              <span class="slide-kicker"><span></span> One care team</span>
+              <h1>Better together.<br><em>Closer to patients.</em></h1>
+            </div>
+            <span class="slide-number">04 / 04</span>
+          </article>
+        </div>
+
+        <button class="carousel-arrow carousel-arrow--prev" id="prev-btn" type="button" aria-label="Previous image">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-arrow carousel-arrow--next" id="next-btn" type="button" aria-label="Next image">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+
+        <div class="carousel-bottom">
+          <span class="carousel-caption">Trusted dental care environment</span>
+          <div class="carousel-progress" id="dots" aria-label="Carousel navigation"></div>
+        </div>
+      </section>
+
+      <div class="login-content">
+        <div class="login-heading">
+          <span class="section-kicker">Hospital portal</span>
+          <h2 id="login-title">Welcome back</h2>
+          <p>Sign in securely to continue to your dental hospital portal.</p>
+        </div>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="email">Work email</label>
+            <div class="input-shell">
+              <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16v11H4z"/><path d="m4.5 7 7.5 5.6L19.5 7"/></svg>
+              <input type="email" id="email" name="email" placeholder="name@dentalhospital.com" autocomplete="username" required>
+            </div>
+            <span class="field-error" id="email-error" role="alert"></span>
+          </div>
+
+          <div class="field">
+            <div class="field-label-row">
+              <label for="password">Password</label>
+              <a href="#" class="link-inline" id="forgot-link">Forgot password?</a>
+            </div>
+            <div class="input-shell">
+              <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="9" rx="2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
+              <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" minlength="6" required>
+              <button type="button" class="toggle-visibility" id="toggle-password" aria-label="Show password">
+                <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.2 12s3.5-6 9.8-6 9.8 6 9.8 6-3.5 6-9.8 6-9.8-6-9.8-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+                <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.4 5.9A9.6 9.6 0 0 1 12 5.8c6.3 0 9.8 6.2 9.8 6.2a16.5 16.5 0 0 1-3.4 4.2M6.7 6.8C4.2 8.4 2.2 12 2.2 12s3.5 6 9.8 6c1.4 0 2.6-.3 3.7-.8"/><path d="M9.7 9.7a2.5 2.5 0 0 0 3.5 3.5"/></svg>
+              </button>
+            </div>
+            <span class="field-error" id="password-error" role="alert"></span>
+          </div>
+
+          <div class="login-options">
+            <label class="remember">
+              <input type="checkbox" id="remember">
+              <span class="custom-check" aria-hidden="true"></span>
+              <span>Keep me signed in</span>
+            </label>
+            <span class="session-note">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 2.9 8.7 7 10 4.1-1.3 7-5.4 7-10V6l-7-3Z"/><path d="m9.3 12 1.8 1.8 3.8-4"/></svg>
+              Private session
+            </span>
+          </div>
+
+          <button type="submit" class="btn-primary" id="submit-btn">
+            <span id="submit-label">Sign in to portal</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+
+          <div class="divider"><span>or continue with</span></div>
+
+          <button type="button" class="btn-secondary" id="google-btn">
+            <span class="google-mark" aria-hidden="true">G</span>
+            <span>Google Workspace</span>
+          </button>
+        </form>
+
+        <div class="card-footer">
+          <div class="trust-line">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 2.9 8.7 7 10 4.1-1.3 7-5.4 7-10V6l-7-3Z"/><path d="m9.3 12 1.8 1.8 3.8-4"/></svg>
+            </span>
+            <span>Protected access for authorized hospital staff</span>
+          </div>
+          <p>Need access? <a href="#" id="register-link">Contact your hospital administrator</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span>© 2026 DentaCare Hospital</span>
+      <span>Authorized clinical access only</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

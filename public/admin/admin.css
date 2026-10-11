@@ -1,0 +1,208 @@
+:root{
+  --bg:#FBFAF8; --text:#071F29; --accent:#41888C; --accent-deep:#2F6E72;
+  --accent-soft:#E8F3F2; --accent-pale:#F2F8F7; --line:#DCE8E6; --muted:#6E8084;
+  --paper:#FFFFFF; --danger:#B85A5A; --warn:#B8925A;
+  --shadow:0 18px 46px rgba(7,31,41,.10),0 6px 16px rgba(65,136,140,.07);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:"DM Sans",system-ui,sans-serif;color:var(--text);background:var(--bg)}
+a{color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+
+.shell{display:flex;min-height:100vh}
+.sidebar{
+  width:230px;flex-shrink:0;background:var(--paper);border-right:1px solid var(--line);
+  padding:22px 14px;display:flex;flex-direction:column;gap:4px;position:sticky;top:0;height:100vh;
+}
+.sidebar .brand{font-family:"Manrope",sans-serif;font-weight:800;font-size:18px;color:var(--accent-deep);padding:6px 10px 18px}
+.sidebar .clinic-name{font-size:12.5px;color:var(--muted);padding:0 10px 18px;margin-top:-14px}
+.nav-link{
+  display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;text-decoration:none;
+  font-size:14.5px;font-weight:500;color:var(--text);
+}
+.nav-link:hover{background:var(--accent-pale)}
+.nav-link.is-active{background:var(--accent-soft);color:var(--accent-deep);font-weight:700}
+.sidebar .logout{margin-top:auto}
+
+.main{flex:1;min-width:0;padding:28px 34px}
+.page-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:10px}
+.page-head h1{font-family:"Manrope",sans-serif;font-size:23px;margin:0}
+.page-head p{color:var(--muted);margin:4px 0 0;font-size:14px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:26px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.card .k{font-size:13px;color:var(--muted)}
+.card .v{font-family:"Manrope",sans-serif;font-size:28px;font-weight:800;color:var(--accent-deep);margin-top:6px}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow);margin-bottom:22px}
+.panel h2{font-size:16px;margin:0 0 14px;font-family:"Manrope",sans-serif}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em}
+
+.btn{border:none;border-radius:9px;padding:9px 16px;font-weight:700;font-size:13.5px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-deep)}
+.btn-ghost{background:var(--accent-pale);color:var(--accent-deep)}
+.btn-danger{background:#F7ECEC;color:var(--danger)}
+.btn-sm{padding:6px 11px;font-size:12.5px;border-radius:7px}
+
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--muted)}
+.field input,.field select,.field textarea{
+  width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text);
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--accent-soft);border-color:var(--accent)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.chip-group{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;background:#fff}
+.chip.is-selected{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.slot-grid{display:flex;flex-wrap:wrap;gap:10px}
+.slot{
+  border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13.5px;font-weight:600;
+  background:#fff;min-width:96px;text-align:center;cursor:pointer;
+}
+.slot.open{border-color:#BFE2DF}
+.slot.held{background:#FFF6E4;border-color:#EBD6A0;color:#8A6B1E}
+.slot.booked{background:#EAF3F2;color:var(--muted);cursor:not-allowed}
+.slot.done{background:#F1F1F1;color:#999;cursor:not-allowed}
+
+.status{margin-top:10px;font-size:13.5px}
+.status.error{color:var(--danger)}
+.status.success{color:#2F6E72}
+.muted{color:var(--muted);font-size:13.5px}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:700}
+.badge.booked{background:var(--accent-soft);color:var(--accent-deep)}
+.badge.cancelled{background:#F7ECEC;color:var(--danger)}
+.badge.completed{background:#EFEFEF;color:#555}
+
+/* API page */
+.api-section{margin-bottom:24px}
+.api-section:last-child{margin-bottom:0}
+.api-section h3{font-size:14.5px;margin:0 0 6px;font-family:"Manrope",sans-serif}
+.api-section .desc{color:var(--muted);font-size:13.5px;margin:0 0 10px}
+.copy-row{display:flex;gap:8px;align-items:center}
+.copy-row .field{flex:1;margin-bottom:0}
+.endpoint{border-bottom:1px solid var(--line);padding:12px 0;display:flex;gap:12px;align-items:flex-start}
+.endpoint:last-child{border-bottom:none}
+.method{flex-shrink:0;font-family:monospace;font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:6px;min-width:42px;text-align:center}
+.method.get{background:var(--accent-soft);color:var(--accent-deep)}
+.method.post{background:#FFF0DE;color:#8A5E1E}
+.endpoint-body code{background:var(--accent-pale);border-radius:5px;padding:1px 5px;font-size:12.5px}
+.endpoint-body p{margin:5px 0 0;font-size:13.5px;color:var(--muted)}
+.endpoint-body .path{font-family:monospace;font-size:14px;font-weight:600;color:var(--text)}
+
+@media (max-width:760px){
+  .shell{flex-direction:column}
+  .sidebar{width:100%;height:auto;position:relative;flex-direction:row;overflow-x:auto}
+  .sidebar .brand,.sidebar .clinic-name{display:none}
+  .main{padding:18px}
+  .row,.row3{grid-template-columns:1fr}
+}
+/* ===================================
+   SLOT STATUS & MANAGEMENT STYLES
+   =================================== */
+
+.slot-card {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.slot-card:hover {
+  background: #f5f5f5;
+  border-color: #bbb;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.slot-time {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.slot-status {
+  font-weight: bold;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.slot-progress {
+  width: 100%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.slot-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4CAF50;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  border-radius: 6px;
+}
+
+/* Booked slot (full) */
+.slot-progress-bar[style*="background: rgb(244, 67, 54)"] {
+  background: #f44336 !important;
+}
+
+/* Available slot */
+.slot-progress-bar[style*="background: rgb(76, 175, 80)"] {
+  background: #4CAF50 !important;
+}
+
+/* Edit button styling */
+#edit-slots-btn {
+  background: #2196F3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#edit-slots-btn:hover {
+  background: #1976D2;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+#edit-slots-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive for mobile */
+@media (max-width: 640px) {
+  .slot-card {
+    padding: 0.75rem;
+  }
+  
+  .slot-time {
+    font-size: 14px;
+  }
+  
+  .slot-status {
+    font-size: 12px;
+  }
+  
+  #edit-slots-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 12px;
+  }
+}

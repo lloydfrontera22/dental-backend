@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — DentaCare Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head><body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">DentaCare</div>
+    <div class="clinic-name" id="clinic-name">Loading…</div>
+    <nav id="sidebar-nav"></nav>
+    <button class="btn btn-ghost logout" id="logout-btn">Log out</button>
+  </aside>
+  <main class="main">
+    <div class="page-head">
+      <div><h1>Dashboard</h1><p>Welcome back, <span data-user-name>—</span></p></div>
+    </div>
+
+    <div class="cards">
+      <div class="card"><div class="k">Today's appointments</div><div class="v" id="c-today">—</div></div>
+      <div class="card"><div class="k">Active patients</div><div class="v" id="c-patients">—</div></div>
+      <div class="card"><div class="k">Doctors</div><div class="v" id="c-doctors">—</div></div>
+    </div>
+
+    <div class="panel">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>Slot Availability</h2>
+        <button class="btn btn-primary" id="edit-slots-btn" style="cursor: pointer;">⚙️ Edit Slots</button>
+      </div>
+      <div id="slots-container" style="display: grid; gap: 1rem; margin-top: 1rem;">
+  <div class="slot-card">
+    <div style="display: flex; justify-content: space-between;">
+      <span class="slot-time" id="slot-0-time">10:00 - 12:00</span>
+      <span class="slot-status" id="slot-0-status">Loading...</span>
+    </div>
+    <div class="slot-progress">
+      <div class="slot-progress-bar" id="slot-0-bar"></div>
+    </div>
+  </div>
+  <div class="slot-card">
+    <div style="display: flex; justify-content: space-between;">
+      <span class="slot-time" id="slot-1-time">14:00 - 16:00</span>
+      <span class="slot-status" id="slot-1-status">Loading...</span>
+    </div>
+    <div class="slot-progress">
+      <div class="slot-progress-bar" id="slot-1-bar"></div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div class="panel">
+      <h2>Upcoming bookings</h2>
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Time</th><th>Patient</th><th>Phone</th><th>Source</th><th>Status</th></tr>
+        </thead>
+        <tbody id="today-rows">
+          <tr><td colspan="6" class="muted">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+<script src="admin.js"></script>
+ <script src="dashboard.js"></script>
+</body></html>

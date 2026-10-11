@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patients — DentaCare Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head><body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">DentaCare</div><div class="clinic-name">&nbsp;</div>
+    <nav id="sidebar-nav"></nav>
+    <button class="btn btn-ghost logout" id="logout-btn">Log out</button>
+  </aside>
+  <main class="main">
+    <div class="page-head"><div><h1>Patients</h1><p>Everyone who has booked, from WhatsApp, calls or the front desk.</p></div>
+      <input id="search" placeholder="Search name or phone">
+    </div>
+    <div class="panel">
+      <table><thead><tr><th>Name</th><th>Phone</th><th>Added</th><th></th></tr></thead>
+      <tbody id="rows"><tr><td colspan="4" class="muted">Loading…</td></tr></tbody></table>
+    </div>
+  </main>
+</div>
+<script src="admin.js"></script>
+<script src="patients.js"></script>
+</body></html>

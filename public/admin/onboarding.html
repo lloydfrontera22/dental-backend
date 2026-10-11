@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set up your clinic — DentaCare</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+<style>body{display:flex;align-items:center;justify-content:center;min-height:100vh}
+.card{max-width:460px;width:92%;background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;box-shadow:var(--shadow)}
+.card h1{font-family:"Manrope",sans-serif;font-size:21px;margin:0 0 4px}
+.card p.sub{color:var(--muted);font-size:14px;margin:0 0 20px}
+.slug-preview{font-size:13px;color:var(--accent-deep);margin-top:-8px;margin-bottom:14px}
+</style></head>
+<body>
+<div class="card">
+  <h1>Set up your clinic</h1>
+  <p class="sub">This creates your clinic's own admin panel and subdomain.</p>
+  <form id="form">
+    <div class="field"><label for="name">Clinic name</label><input id="name" required placeholder="e.g. Happy Dent"></div>
+    <div class="slug-preview" id="slug-preview">Your admin panel: —</div>
+    <div class="field"><label for="whatsapp">WhatsApp number (optional)</label><input id="whatsapp" placeholder="+91XXXXXXXXXX"></div>
+    <button class="btn btn-primary" type="submit" id="submit-btn" style="width:100%">Create clinic</button>
+    <p class="status" id="status"></p>
+  </form>
+</div>
+<script src="admin.js"></script>
+<script src="onboarding.js"></script>
+</body></html>
